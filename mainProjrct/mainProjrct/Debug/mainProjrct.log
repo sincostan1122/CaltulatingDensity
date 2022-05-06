@@ -1,5 +1,1 @@
-﻿  main.c
-C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(22,9): warning C4477:  'scanf' : 서식 문자열 '%d'에 'int *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int'입니다.
-C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(28,32): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
-C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(55,1): warning C4047:  '초기화 중': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
-  mainProjrct.vcxproj -> C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\Debug\mainProjrct.exe
+﻿  mainProjrct.vcxproj -> C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\Debug\mainProjrct.exe
