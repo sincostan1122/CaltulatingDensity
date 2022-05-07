@@ -4,6 +4,7 @@
 #include <string.h>
 #include <conio.h>
 #include <Windows.h>
+
 void intro();
 void gotoxy(int x, int y);
 int start_select();
@@ -16,6 +17,7 @@ void option(float x, float y);
 float range1 = 0.5;
 float range2 = 1.5;
 FILE* fp;
+FILE* bp;
 char num[100];
 char density[100];
 char name[200];
@@ -264,20 +266,52 @@ void addData() {
 	}
 }
 void deleteData(int z) {
-	fp = fopen("nameData.txt", "a");
+	fp = fopen("nameData.txt", "r");
+	bp = fopen("bufferData.txt", "w");
+	int a = 0;
 	while (fgets(num, sizeof(num), fp) != NULL) {
-		num[strlen(num) - 1] = NULL;
+		char numa[100];
+		strcpy(numa, num);
+		numa[strlen(numa) - 1] = NULL;
 		fgets(density, sizeof(density), fp);
 		fgets(name, sizeof(name), fp);	
-		if (atoi(num) == z) {
-			printf("%s - %s %sg/mL <\n\n", num, name, density);
-		}
-		else {
-			printf("%s - %s %sg/mL\n\n", num, name, density);
+		
+		if (atoi(numa) != z) {
+			
+			if (a == 0) {
+				fputs(num, bp);
+				fputs(density, bp);
+				fputs(name, bp);
+			}
+			else if (a == 1) {
+				fputs(_itoa(atoi(numa)-1, numa, 10), bp);
+				fputs("\n", bp);
+				fputs(density, bp);
+				fputs(name, bp);
+			}
 
+			
+		}
+		if (atoi(numa) == z) {
+			a = 1;
 		}
 	}
 	fclose(fp);
+	fclose(bp);
+
+	fp = fopen("nameData.txt", "w");
+	bp = fopen("bufferData.txt", "r");
+	while (fgets(num, sizeof(num), bp) != NULL) {
+		fgets(density, sizeof(density), bp);
+		fgets(name, sizeof(name), bp);
+
+		fputs(num, fp);
+		fputs(density, fp);
+		fputs(name, fp);
+	}
+	fclose(fp);
+	fclose(bp);
+	d--;
 }
 int selectDataToDelete() {
 	system("cls");
