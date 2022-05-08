@@ -8,19 +8,23 @@
 void intro();
 void gotoxy(int x, int y);
 int start_select();
+int startToCalculate();
+int calculateDensity(int n, double x);
 int dataManage();
 void addData();
 void deleteData(int z);
 int selectDataToDelete();
-void option(float x, float y);
+void option(double x, double y);
 
-float range1 = 0.5;
-float range2 = 1.5;
+double range1 = 0.2;
+double range2 = 0.5;
 FILE* fp;
 FILE* bp;
 char num[100];
 char density[100];
 char name[200];
+char name[200];
+char tmp[200];
 int d = 0;
 
 int main() {
@@ -38,7 +42,31 @@ int main() {
 	while (1) {
 		int y = start_select();
 		if (y == 1) {
+			while (1) {
+				int u = startToCalculate();
+				if (u == 1) {
+					system("cls");
+					printf("물질의 질량(g)과 부피(mL)를 측정하여 차례대로 적어주세요\n(ex.질량 100g에 부피 70mL인 물질의 경우 100 70 입력)\n\n>");
+					double a = 0;
+					double b = 0;
+					scanf("%lf %lf", &a, &b);
+					system("cls");
+					double c = a / b;
+					calculateDensity(1, c);
+				}
+				else if (u == 2) {
+					system("cls");
+					printf("물질의 밀도(g/mL)를 입력해주세요\n\n>");
+					double a = 0;
+					scanf("%lf", &a);
+					calculateDensity(0, a);
 
+				}
+				else if (u == 3) {
+					break;
+				}
+				
+			}
 		}
 		else if (y == 2) {
 			while (1) {
@@ -98,7 +126,7 @@ int start_select() {  //메인 인터페이스
 	char select = NULL;
 	while (1) {
 		system("cls");
-		printf("밀도 계산\n데이터 관리\n오차범위 재설정\n종료");
+		printf("물질 분류\n데이터 관리\n오차범위 재설정\n종료");
 		if (error == 1) {
 			gotoxy(0, 6);
 			printf("Caps Lock을 풀어주세요.");
@@ -158,11 +186,184 @@ int start_select() {  //메인 인터페이스
 		}
 	}
 }
+int startToCalculate() {
+	system("cls");
+	int s = 1;
+	int error = 0;
+	char select = NULL;
+	while (1) {
+		system("cls");
+		printf("질량과 부피를 이용해 물질 분류하기\n밀도를 이용해 물질 분류하기\n뒤로가기");
+		if (error == 1) {
+			gotoxy(0, 6);
+			printf("Caps Lock을 풀어주세요.");
+			error = 0;
+		}
+		else if (error == 2) {
+			gotoxy(0, 6);
+			printf("한/영키를 바꿔주세요.");
+			error = 0;
+		}
+		if (s == 1) {
+			gotoxy(35, 0);
+		}
+		else if (s == 2) {
+			gotoxy(28, 1);
+		}
+		else if (s == 3) {
+			gotoxy(9, 2);
+		}
+
+		printf("<");
+
+		while (1) {
+			if (_kbhit()) {
+				select = _getch();
+				if (select == -32) {
+					select = _getch();
+					switch (select) {
+					case 72:
+						if (s != 1) {
+							s--;
+							break;
+						}
+					case 80:
+						if (s != 3) {
+							s++;
+							break;
+						}
+					}
+					break;
+				}
+				else if (select == 'a') {
+					return s;
+				}
+				else if (select == 'A') {
+					error = 1;
+					break;
+				}
+				else if (select < 0 || select > 126) {
+					error = 2;
+					break;
+				}
+			}
+		}
+	}
+}
+int calculateDensity(int n, double x) {
+	system("cls");
+	if (n == 1) {
+		printf("이 물질의 밀도는 %gg/mL입니다.\n", x);
+	}
+	else {
+		printf("입력된 밀도는 %gg/mL입니다.\n", x);
+	}
+	fp = fopen("nameData.txt", "r");
+	int f = 0;
+	int a = 0;
+	while (fgets(num, sizeof(num), fp) != NULL) {
+		num[strlen(num) - 1] = NULL;
+		fgets(density, sizeof(density), fp);
+		density[strlen(density) - 1] = NULL;
+		fgets(name, sizeof(name), fp);
+		name[strlen(name) - 1] = NULL;
+		char t[100];
+		sprintf(t, "%lf", x);
+		if (strcmp(density, t) == 0) {
+			if (f == 0) {
+				printf("이 물질은 ");
+				printf("%s(%gg/mL)", name, x);
+				f++;
+			}
+			else {
+				printf(", 혹은 %s(%gg/mL)", name, x);
+				f++;
+			}
+		}
+	}
+	if (f != 0) {
+		printf("일 가능성이 가장 높습니다.\n");
+		a++;
+	}
+	f = 0;
+	fclose(fp);
+	fp = fopen("nameData.txt", "r");
+	while (fgets(num, sizeof(num), fp) != NULL) {
+		num[strlen(num) - 1] = NULL;
+		fgets(density, sizeof(density), fp);
+		density[strlen(density) - 1] = NULL;
+		fgets(name, sizeof(name), fp);
+		name[strlen(name) - 1] = NULL;
+		char t[100];
+		sprintf(t, "%lf", x);
+		if (atof(density) + range1 >= x && atof(density) - range1 <= x && strcmp(density, t) != 0) {
+			if (f == 0) {
+				printf("이 물질은 ");
+				printf("%s(%gg/mL)", name, atof(density));
+				f++;
+			}
+			else {
+				printf(", 혹은 %s(%gg/mL)", name, atof(density));
+				f++;
+			}
+		}
+	}
+	if (f != 0) {
+		a++;
+		if (a == 2) {
+
+			printf("일 가능성이 있습니다.\n");
+		}
+		else if (f == 1) {
+			printf("일 가능성이 가장 높습니다.\n");
+		}
+	}
+	f = 0;
+	fclose(fp);
+	fp = fopen("nameData.txt", "r");
+	while (fgets(num, sizeof(num), fp) != NULL) {
+		num[strlen(num) - 1] = NULL;
+		fgets(density, sizeof(density), fp);
+		density[strlen(density) - 1] = NULL;
+		fgets(name, sizeof(name), fp);
+		name[strlen(name) - 1] = NULL;
+		if (atof(density) + range2 >= x && atof(density) - range2 <= x && (atof(density) + range1 < x || atof(density) - range1 > x)) {
+			if (f == 0) {
+				printf("이 물질은 ");
+				printf("%s(%gg/mL)", name, atof(density));
+				f++;
+			}
+			else {
+				printf(", 혹은 %s(%gg/mL)", name, atof(density));
+				f++;
+			}
+		}
+	}
+	if (f != 0) {
+		
+
+		printf("일 수도 있습니다.\n");
+		a++;
+		
+		
+	}
+	f = 0;
+	fclose(fp);
+	if (a == 0) {
+		printf("데이터에 포함되지 않은 밀도입니다.\n");
+	}
+	printf("\n아무 키나 눌러 뒤로가기");
+	char q = NULL;
+	q = _getch();
+}
 void addData() {
 	system("cls");
-	printf("추가할 데이터의 이름과 밀도를 입력하세요.");
+	printf("추가할 데이터의 이름을 입력하세요.\n\n>");
 	fp = fopen("nameData.txt", "r");
-	scanf("%s %s", name, density);
+	scanf("%s", name);
+	system("cls");
+	printf("물질 %s의 밀도를 입력하세요.\n\n>", name);
+	scanf("%s", density);
 	char numa[100];
 	char densitya[100];
 	char buffer[100];
@@ -527,7 +728,7 @@ void option() { //오차범위 설정
 			}
 		}
 		if (x == 1) {			
-			float q = 0.0;
+			double q = 0.0;
 			error = 0;
 			while (1) {
 				system("cls");
@@ -545,7 +746,7 @@ void option() { //오차범위 설정
 					gotoxy(28, 1);
 					error = 0;
 				}
-				scanf("%f", &q);
+				scanf("%lf", &q);
 				if (q > range2) {
 					error = 1;
 				}
@@ -560,7 +761,7 @@ void option() { //오차범위 설정
 			x = 0;
 		}
 		else if (x == 2) {
-			float q = 0.0;
+			double q = 0.0;
 			int error = 0;
 			while (1) {
 				system("cls");
@@ -578,7 +779,7 @@ void option() { //오차범위 설정
 					gotoxy(28, 1);
 					error = 0;
 				}
-				scanf("%f", &q);
+				scanf("%lf", &q);
 				if (q < range1) {
 					error = 1;
 				}

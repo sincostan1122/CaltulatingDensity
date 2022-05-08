@@ -1,18 +1,30 @@
 ﻿  main.c
-C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(98,1): warning C4047:  '초기화 중': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
-C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(171,32): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
-C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(173,40): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
-C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(175,36): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
-C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(179,1): warning C4047:  '초기화 중': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
-C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(275,32): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
-C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(325,31): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
-C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(327,39): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
-C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(329,33): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
-C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(320,1): warning C4047:  '초기화 중': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
-C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(399,31): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
-C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(401,39): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
-C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(403,33): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
-C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(394,1): warning C4047:  '초기화 중': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
-C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(466,15): warning C4026:  정식 매개 변수 목록을 사용하여 함수를 선언했습니다.
-C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(467,1): warning C4047:  '초기화 중': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(126,1): warning C4047:  '초기화 중': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(193,1): warning C4047:  '초기화 중': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(265,30): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(267,38): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(269,32): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(292,30): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(294,38): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(296,32): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(325,30): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(327,38): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(329,32): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(356,1): warning C4047:  '초기화 중': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(372,32): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(374,40): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(376,36): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(380,1): warning C4047:  '초기화 중': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(476,32): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(526,31): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(528,39): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(530,33): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(521,1): warning C4047:  '초기화 중': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(600,31): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(602,39): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(604,33): warning C4047:  '=': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(595,1): warning C4047:  '초기화 중': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(667,15): warning C4026:  정식 매개 변수 목록을 사용하여 함수를 선언했습니다.
+C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(668,1): warning C4047:  '초기화 중': 'char'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\mainProjrct\main.c(358): warning C4715:  'calculateDensity': 모든 제어 경로에서 값을 반환하지는 않습니다.
   mainProjrct.vcxproj -> C:\Users\박준성\Desktop\코딩\densityData\mainProjrct\Debug\mainProjrct.exe

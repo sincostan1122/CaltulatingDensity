@@ -20,10 +20,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="nameData.txt">
+    <Text Include="bufferData.txt">
       <Filter>소스 파일</Filter>
     </Text>
-    <Text Include="bufferData.txt">
+    <Text Include="nameData.txt">
       <Filter>소스 파일</Filter>
     </Text>
   </ItemGroup>
